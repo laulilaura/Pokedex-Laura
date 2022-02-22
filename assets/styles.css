@@ -1,0 +1,106 @@
+ /* 
+    + : immédiatement suivit
+    > : submit enfant de mySearch
+    ~ : suivit ET même parent
+      : élément B présent dans un élément A (A B)
+    ||:  B appartient à la colonne A (A B)
+*/
+
+body {
+    background-color: #f2f2f2;
+    margin: 0px;
+    font-family: tahoma;
+    color: #282828;
+}
+
+.header {
+    color: #b09b96;
+    font-size: 30px;
+}
+
+.header > nav > a {
+    text-align: center;
+    background: #313131;
+    color : #b09b96;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+.header li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+.header li a:hover {
+        background-color: #555;
+        color: white;
+}
+
+.mySearch {
+    background-color: #313131;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySearch > .submit {
+    background-image: url("images/loupe.png");
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e4632d;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 32px;
+}
+
+.bodycenter {
+    background-image: url("images/wallpaper-grey.jpg");
+    background-position: center;
+}
+
+.footer {
+    position: fixed;
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+    width: 100%;
+    background-color: #313131;
+    text-align:start;
+}
+
+.company {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: White;
+    margin-left: 2%;
+}
+.footer > nav > a {
+    color: #636363	;
+    display: inline-block;
+}
+
+.footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+.footer li a {
+    display: block;
+    color: #636363;
+    padding: 2% 5%;
+    text-decoration: none;
+}
+
+.endText {
+    color: #636363;
+    font-size: 0.7em;
+    text-align: center;
+}
