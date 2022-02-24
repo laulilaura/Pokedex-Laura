@@ -3,31 +3,28 @@ app.component('liste', {
     /*html*/
     `
     <form class="mySearch"> 
-          <!--<input id="searchPokéData" type="text" name="text" class="search" placeholder="Recherchez un pokémon par son nom ou ID!">
-          <input type="submit" name="submit" class="submit" onclick="searchPoké()" value="">-->
-          <input id="searchPokéData" onkeyup="search_pokemon()" type="text"
-        name="search" placeholder="Search pokemon..">
+          <input id="searchPokéData" class="searchPokéData" onkeyup="search_pokemon()" type="text"
+            name="search" placeholder="Recherchez un Pokémon par son nom ou en utilisant son numéro Pokédex national.">
         </form>
     <div class="bodycenter">
         <ul class="myPokemon">
 
           <li class="pokemon" v-for="index in dataPoké" :key="index">
             <div class="chaquePoke">
-              <h2>
-                {{ index.name }}
-              </h2>
+              
               <img :src="index.sprites.front_default" :alt="index.name">
-              <p>{{ index.id }}</p>
+              <p>#{{ index.id }}</p>
+              <h2>{{ index.name }}</h2>
 
-              <button v-on:click="capaciteAffiche"></button>
+              <button class="buttonAffiche" v-on:click="capaciteAffiche()">Afficher les caracteristiques</button>
 
-              <div id ="capacite" class="capacite">
+              <div id ="capacite" class="capacite" ref="capaciteref">
                 <li v-for="abilities in index.abilities" :key="abilities">
                     {{ abilities.ability.name}}
                 </li>
-                <button v-on:click="capaciteAffiche"></button>
+                <button class="buttonCache"  v-on:click="capaciteAffiche()">Cacher les caracteristiques</button>
               </div>
-              
+
             </div>
           </li>
 
@@ -48,6 +45,10 @@ app.component('liste', {
               }
           }
            console.log("recherche script")
+        }
+        function capaciteAffiche(hiddenElm){
+          maDesc = document.getElementById('capacite');
+          maDesc.style.visibility = hiddenElm;
         }
       </script>
     `,
@@ -118,9 +119,11 @@ app.component('liste', {
               console.log(err)
           }
       }
+    },capaciteAffiche: function() {
+      maDesc = this.$refs.capaciteref;
+      console.log(maDesc);
+      maDesc.style.visibility = maDesc.style.visibility == "visible" ? "hidden" : "visible";
     }
-  },
-  capaciteAffiche(hiddenElm){
-    document.getElementById('capacite').hidden = hiddenElm;
   }
+  
 })
