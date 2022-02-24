@@ -22,6 +22,9 @@ app.component('liste', {
                 <li v-for="abilities in index.abilities" :key="abilities">
                     {{ abilities.ability.name}}
                 </li>
+                <li v-for="held_items in index.held_items" :key="held_items">
+                    {{ held_items.item.name}}
+                </li>
                 <button class="buttonCache"  v-on:click="capaciteAffiche()">Cacher les caracteristiques</button>
               </div>
 
@@ -32,8 +35,7 @@ app.component('liste', {
       </div>
       <script>
         function search_pokemon() {
-          let input = document.getElementById('searchPokéData').value
-          input=input.toLowerCase();
+          let input = document.getElementById('searchPokéData').value.toLowerCase();
           let x = document.getElementsByClassName('pokemon');
           
           for (i = 0; i < x.length; i++) {
@@ -100,7 +102,7 @@ app.component('liste', {
       // ##########################################################################################
 
 
-      // Boucle qui récupère pour chaque url de Pokemon les donnees de chaque Pokemon (id, name, abilities, types,...)
+      // Récupération pour chaque Pokemon leurs donnees: id, name, capacités, types,...)
       // En parcourant le tableau results obtenu juste avant
       for (let i = 0; i < dataListe.results.length; i++) {                
       
