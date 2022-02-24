@@ -71,7 +71,6 @@ app.component('liste', {
           if (repTaille.ok) {
               let buffer = await repTaille.json()
               nbPokemon = buffer.count
-              //nbPokemon = 200 // Limitation artificielle
           } 
           else {
               console.log("Erreur du serveur")

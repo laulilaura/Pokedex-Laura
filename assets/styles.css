@@ -105,7 +105,7 @@ form {
 }
 
 .capacite {
-    visibility: hidden;
+    visibility: hidden; /*CE QUI DOIT ETRE CHANGE POUR AFFICHER LES CARACTERISTIQUES*/
 }
 
 .buttonCache {
